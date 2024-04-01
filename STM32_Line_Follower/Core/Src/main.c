@@ -72,7 +72,7 @@ float kp = 0.1;//0.4
 float ki = 0.00001;//0.0016
 float kd = 0.025;//0.125 oscillate
 float pidCalculate;
-float linear_v = 90;
+float linear_v = 80;
 float dt = 0.01;
 
 /* USER CODE END PV */
@@ -575,10 +575,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	 if (pidCalculate < -160) pidCalculate = -160;
 	 rightMotor = linear_v - pidCalculate/2;
 	 leftMotor = linear_v + pidCalculate/2;
-	 if (rightMotor > 100) rightMotor = 100;
-	 if (rightMotor < -100) rightMotor = -100;
-	 if (leftMotor > 100) leftMotor = 100;
-	 if (leftMotor < -100) leftMotor = -100;
+	 if (rightMotor > 90) rightMotor = 90;
+	 if (rightMotor < -90) rightMotor = -90;
+	 if (leftMotor > 90) leftMotor = 90;
+	 if (leftMotor < -90) leftMotor = -90;
 	 if(norm_ss[2]>0.5||norm_ss[3]>0.5||norm_ss[4]>0.5||norm_ss[5]>0.5){
 
 		 if (leftMotor >= 0){
