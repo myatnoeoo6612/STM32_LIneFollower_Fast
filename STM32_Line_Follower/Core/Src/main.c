@@ -598,7 +598,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		 else if (leftMotor < 0){
 			 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
 			 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, 1);
-			 TIM1->CCR1 = -1*leftMotor;
+			 TIM1->CCR1 = leftMotor;
 			 //TIM1->CCR1 = -1*linear_v;
 //			 TIM3->CCR1 = 0;
 //			 TIM3->CCR2 = -1*leftMotor;
@@ -616,7 +616,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 //		 	 TIM3->CCR4 = -1*rightMotor;
 			 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
 			 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 1);
-			 TIM1->CCR2 = -1*rightMotor;
+			 TIM1->CCR2 = rightMotor;
 			 //TIM1->CCR2 = -1*linear_v;
 	 	 }
 	 }
